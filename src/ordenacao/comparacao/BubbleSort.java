@@ -1,12 +1,15 @@
 package ordenacao.comparacao;
 
-import java.util.Arrays;
+/**
+ * Percorre o array n vezes, a cada passagem faz flutuar para o topo o maior
+ * elemento da sequência.
+ * 
+ * @author Douglas Rafael
+ */
+public class BubbleSort implements Ordenacao {
 
-public class BubbleSort extends Ordenacao {
-	private int[] lista;
-
-	public BubbleSort(int[] l) {
-		lista = l;
+	@Override
+	public int[] sort(int[] lista) {
 		int aux = 0, n = lista.length;
 
 		for (int i = 1; i < n; i++) {
@@ -18,10 +21,6 @@ public class BubbleSort extends Ordenacao {
 				}
 			}
 		}
-	}
-
-	@Override
-	public String toString() {
-		return Arrays.toString(lista);
+		return lista;
 	}
 }

@@ -1,9 +1,17 @@
 package ordenacao.comparacao;
 
-public class Ordenacao {
-	
-	public Ordenacao() {
-		// TODO Auto-generated constructor stub
-	}
-	
+/**
+ * Interface para algoritmos de ordenação
+ * 
+ * @author FS Developer
+ *
+ */
+public interface Ordenacao {
+	/**
+	 * Ordena a lista de acordo com a implmentação
+	 * 
+	 * @param lista A ser ordenada
+	 * @return A mesma lista ordenada
+	 */
+	public int[] sort(int[] lista);
 }
