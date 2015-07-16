@@ -5,21 +5,21 @@ package br.edu.uepb.ordenacao.comparacao;
  * O processo é feito para o restante da lista, começando com a próxima posição.
  * 
  * @author Douglas Rafael
- *
+ * @param <T> Tipo genérico
  */
-public class SelectionSort implements Ordenacao {
+public class SelectionSort<T> implements Ordenacao<T> {
 
 	@Override
-	public int[] sort(int[] lista) {
+	public <T extends Comparable<T>> T[] sort(T[] lista) {
 		int n = lista.length;
-		int temp = 0;
+		T temp;
 		int min = 0;
 
 		for (int i = 0; i < n - 1; i++) {
 			min = i;
 			for (int j = i + 1; j < n; j++) {
-				if (lista[j] < min) {
-					min = lista[j];
+				if (lista[j].compareTo(lista[min]) <= 0) {
+					min = j;
 				}
 			}
 			if (min != i) {

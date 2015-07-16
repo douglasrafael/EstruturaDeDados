@@ -6,15 +6,16 @@ package br.edu.uepb.ordenacao.comparacao;
  * Se não existir anterior ao pivô então anda para frente, ao invés de decrenentar.
  * 
  * @author Douglas Rafael
- *
+ * @param <T> Tipo genérico
  */
-public class GnomeSort implements Ordenacao {
+public class GnomeSort<T> implements Ordenacao<T> {
 
 	@Override
-	public int[] sort(int[] lista) {
-		int pivo = 1, temp = 0, n = lista.length;
+	public <T extends Comparable<T>> T[] sort(T[] lista) {
+		int pivo = 1, n = lista.length;
+		T temp;
 		while (pivo < n) {
-			if (lista[pivo] >= lista[pivo - 1]) {
+			if (lista[pivo].compareTo(lista[pivo - 1]) > 0) {
 				pivo++;
 			} else {
 				temp = lista[pivo];

@@ -3,35 +3,46 @@ package br.edu.uepb.ordenacao.comparacao;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * Classe para testar os algoritmos de ordenaçaõ por comparação.
+ * 
+ * @author Douglas Rafael
+ */
 public class AppTest {
 	private static final int TOTAL_ELEMENTOS = 10;
 	private static final int TOTAL_RANGE = 1000;
-	private static int[] data;
+	private static Integer[] dataInteiro;
+	private static String[] dataString;
 
 	public static void main(String[] args) {
-		data = montaLista();
-
+		dataInteiro = arrayInteiros();
+		dataString = arrayStrings();
 		// Lista Original
-		System.out.println("LISTA ORIGINAL:\n" + Arrays.toString(data) + "\n");
+		System.out.println("DADOS INICIAIS:\n" + Arrays.toString(arrayInteiros()) + "\n" + Arrays.toString(arrayStrings()) + "\n");
 
 		// Bubble Sort
-		printArray(new BubbleSort().sort(data), "BUBBLE SORT");
+		printArray(new BubbleSort().sort(dataInteiro), "BUBBLE SORT");
+		printArray(new BubbleSort().sort(dataString), "BUBBLE SORT");
+		
 		// Selection Sort
-		printArray(new SelectionSort().sort(data), "SELECTION SORT");
+		printArray(new SelectionSort().sort(dataInteiro), "SELECTION SORT");
+		printArray(new SelectionSort().sort(dataString), "SELECTION SORT");
 		// Insertion Sort
-		printArray(new InsertionSort().sort(data), "INSERTION SORT");
+		printArray(new InsertionSort().sort(dataInteiro), "INSERTION SORT");
+		printArray(new InsertionSort().sort(dataString), "INSERTION SORT");
 		// Gnome Sort
-		printArray(new GnomeSort().sort(data), "GNOME SORT");
+		printArray(new GnomeSort().sort(dataInteiro), "GNOME SORT");
+		printArray(new GnomeSort().sort(dataString), "GNOME SORT");
 		;
 	}
 
 	/**
-	 * Monta uma lista com números inteiros aleatórios
+	 * Monta um Array com números inteiros aleatórios
 	 * 
-	 * @return Lista de inteiros com os números gerados aleatoriamente
+	 * @return Array de inteiros com os números gerados aleatoriamente
 	 */
-	public static int[] montaLista() {
-		int[] numerosAleatorios = new int[TOTAL_ELEMENTOS];
+	private static Integer[] arrayInteiros() {
+		Integer[] numerosAleatorios = new Integer[TOTAL_ELEMENTOS];
 		Random gerador = new Random();
 
 		/**
@@ -43,14 +54,25 @@ public class AppTest {
 
 		return numerosAleatorios;
 	}
+	
+	/**
+	 * Retorna array de strings com nomes
+	 * 
+	 * @return Array contendo os nomes
+	 */
+	private static String[] arrayStrings() {
+		return new String[] { "Werdcen", "Nathlee", "Anchell", "Paultheod",
+				"Sabri", "Gormaar", "Rensean", "Aforth", "Beochell", "Dradas",
+				"Joanlas", "Canmuel","Soisum","Theodthas","Tysan","Orahne","Nasu", "Conthonydun","Brytdon", "Ea"};
+	}
 
 	/**
 	 * Imprime o array
+	 * @param <T> Tipo genérico
 	 * 
-	 * @param array
-	 *            O array a ser printado
+	 * @param array O array a ser exibido
 	 */
-	private static void printArray(int[] array, String algo) {
+	private static <T> void printArray(T[] array, String algo) {
 		System.out.println(algo + "\n" + Arrays.toString(array) + "\n");
 	}
 }

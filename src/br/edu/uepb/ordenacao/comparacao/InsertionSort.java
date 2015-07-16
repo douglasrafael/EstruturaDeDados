@@ -6,19 +6,21 @@ package br.edu.uepb.ordenacao.comparacao;
  * O algoritmo de inserção funciona da mesma maneira com que muitas pessoas 
  * ordenam cartas em um jogo de baralho como o pôquer.1
  * 
- * @author FS Developer
+ * @author Douglas Rafael
+ * @param <T> tipo genérico
  *
  */
-public class InsertionSort implements Ordenacao {
+public class InsertionSort<T> implements Ordenacao<T> {
 
 	@Override
-	public int[] sort(int[] lista) {
-		int i = 0, eleito = 0;
+	public <T extends Comparable<T>> T[] sort(T[] lista) {
+		int i = 0; 
+		T eleito;
 
 		for (int j = 1; j < lista.length; j++) {
 			eleito = lista[j];
 			i = j - 1;
-			while (i >= 0 && lista[i] > eleito) {
+			while (i >= 0 && lista[i].compareTo(eleito) > 0) {
 				lista[i + 1] = lista[i];
 				i--;
 			}
