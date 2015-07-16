@@ -1,4 +1,4 @@
-package ordenacao.comparacao;
+package br.edu.uepb.ordenacao.comparacao;
 
 /**
  * Percorre um vetor de elementos da esquerda para a direita e à medida 

@@ -1,4 +1,4 @@
-package ordenacao.comparacao;
+package br.edu.uepb.ordenacao.comparacao;
 
 /**
  * Adota um pivô que tenha anterior e compara com o próximo, se estão na ordem

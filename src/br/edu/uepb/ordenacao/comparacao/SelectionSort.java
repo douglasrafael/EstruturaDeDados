@@ -1,4 +1,4 @@
-package ordenacao.comparacao;
+package br.edu.uepb.ordenacao.comparacao;
 
 /**
  * Encontra o menor elemento da lista e troca com o primeiro elemento. 

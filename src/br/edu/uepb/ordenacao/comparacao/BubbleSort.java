@@ -1,4 +1,4 @@
-package ordenacao.comparacao;
+package br.edu.uepb.ordenacao.comparacao;
 
 /**
  * Percorre o array n vezes, a cada passagem faz flutuar para o topo o maior

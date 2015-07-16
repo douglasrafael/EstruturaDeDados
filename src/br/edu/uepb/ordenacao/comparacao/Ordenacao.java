@@ -1,4 +1,4 @@
-package ordenacao.comparacao;
+package br.edu.uepb.ordenacao.comparacao;
 
 /**
  * Interface para algoritmos de ordenação

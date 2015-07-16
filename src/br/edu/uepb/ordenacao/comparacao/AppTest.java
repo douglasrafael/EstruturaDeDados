@@ -1,4 +1,4 @@
-package ordenacao.comparacao;
+package br.edu.uepb.ordenacao.comparacao;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -13,7 +13,7 @@ public class AppTest {
 
 		// Lista Original
 		System.out.println("LISTA ORIGINAL:\n" + Arrays.toString(data) + "\n");
-		
+
 		// Bubble Sort
 		printArray(new BubbleSort().sort(data), "BUBBLE SORT");
 		// Selection Sort
@@ -21,7 +21,8 @@ public class AppTest {
 		// Insertion Sort
 		printArray(new InsertionSort().sort(data), "INSERTION SORT");
 		// Gnome Sort
-		printArray(new GnomeSort().sort(data), "GNOME SORT");;
+		printArray(new GnomeSort().sort(data), "GNOME SORT");
+		;
 	}
 
 	/**
@@ -46,7 +47,8 @@ public class AppTest {
 	/**
 	 * Imprime o array
 	 * 
-	 * @param array O array a ser printado
+	 * @param array
+	 *            O array a ser printado
 	 */
 	private static void printArray(int[] array, String algo) {
 		System.out.println(algo + "\n" + Arrays.toString(array) + "\n");
